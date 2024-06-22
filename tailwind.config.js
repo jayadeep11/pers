@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        acorn: ['var(--font-acorn)'],
+      }
     },
   },
   plugins: [],
