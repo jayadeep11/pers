@@ -39,9 +39,9 @@ const Navbar = () => {
   return (
     <nav className={`sticky top-5 z-50 `}>
       <div className="flex justify-center items-center">
-        <ul className={` hidden font-medium backdrop-blur-xl transition-all md:flex duration-500 rounded-full ${scrolled ? "border " : "border"} border-neutral-700/80 p-4 lg:flex justify-center space-x-14  lg:w-[500px]`}>
+        <ul className={` hidden font-medium backdrop-blur-xl p-3 transition-all md:flex duration-500 rounded-full ${scrolled ? "border " : "border"} border-neutral-700/80  lg:flex justify-center space-x-14  lg:w-[500px]`}>
           {navItems.map((item, index) => (
-            <li key={index} className={`hover:text-orange-500 p-2 transition-all duration-700 ${pathname == item.href ? style : ""}  style : "" `}>
+            <li key={index} className={` p-1 transition-all duration-700 ${pathname == item.href ? style : ""}  style : "" `}>
               <Link href={item.href}>{item.label}</Link>
             </li>
           ))}
