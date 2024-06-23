@@ -1,54 +1,80 @@
-'use client'
-import { useEffect, useState } from "react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+// src/app/components/Navbr.tsx
 
+"use client";
+
+import { motion } from "framer-motion";
+import { useState } from "react";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 const navItems = [
-  { label: "Workflow", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Notes", href: "/notes" },
-  { label: "Contact", href: "/contact" },
+  {
+    path: "/",
+    name: "Work",
+  },
+  {
+    path: "/about",
+    name: "About",
+  },
+  {
+    path: "/notes",
+    name: "Notes",
+  },
+  {
+    path: "/contact",
+    name: "Contact",
+  },
 ];
 
-const style = "bg-white rounded-full   text-black"
+export default function NavBar() {
+  let pathname = usePathname() || "/";
 
+  if (pathname.includes("/notes/")) {
+    pathname = "/notes";
+  }
 
-
-const Navbar = () => {
-  const [scrolled, setScrolled] = useState(false);
-  const pathname = usePathname();
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 0) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    // Cleanup the event listener on component unmount
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  const [hoveredPath, setHoveredPath] = useState(pathname);
 
   return (
-    <nav className={`sticky top-5 z-50 `}>
-      <div className="flex justify-center items-center">
-        <ul className={` hidden font-medium backdrop-blur-xl p-3 transition-all md:flex duration-500 rounded-full ${scrolled ? "border " : "border"} border-neutral-700/80  lg:flex justify-center space-x-14  lg:w-[500px]`}>
-          {navItems.map((item, index) => (
-            <li key={index} className={` p-1 transition-all duration-700 ${pathname == item.href ? style : ""}  style : "" `}>
-              <Link href={item.href}>{item.label}</Link>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </nav>
-  );
-};
+    <div className="flex justify-center mt-5">
+      <div className="border border-neutral-800/90 p-[0.4rem]  rounded-full sticky z-[100]  backdrop-blur-md">
+        <nav className="flex gap-2 relative justify-center w-full z-[100]  rounded-full">
+          {navItems.map((item) => {
+            const isActive = item.path === pathname;
 
-export default Navbar;
+            return (
+              <Link
+                key={item.path}
+                className={`px-4 py-2 rounded-full text-sm font-medium lg:text-base relative no-underline duration-300 ease-in ${isActive ? "text-zinc-100" : "text-zinc-400"
+                  }`}
+                data-active={isActive}
+                href={item.path}
+                onMouseOver={() => setHoveredPath(item.path)}
+                onMouseLeave={() => setHoveredPath(pathname)}
+              >
+                <span>{item.name}</span>
+                {item.path === hoveredPath && (
+                  <motion.div
+                    className="absolute bottom-0 left-0 h-full bg-stone-800/80 rounded-full -z-10"
+                    layoutId="navbar"
+                    aria-hidden="true"
+                    style={{
+                      width: "100%",
+                    }}
+                    transition={{
+                      type: "spring",
+                      bounce: 0.25,
+                      stiffness: 130,
+                      damping: 9,
+                      duration: 0.3,
+                    }}
+                  />
+                )}
+              </Link>
+            );
+          })}
+        </nav>
+      </div>
+    </div>
+  );
+}
