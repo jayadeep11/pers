@@ -1,5 +1,3 @@
-// src/app/components/Navbr.tsx
-
 "use client";
 
 import { motion } from "framer-motion";
@@ -36,9 +34,9 @@ export default function NavBar() {
   const [hoveredPath, setHoveredPath] = useState(pathname);
 
   return (
-    <div className="flex justify-center mt-5">
+    <div className="flex justify-center items-center mt-5 mx-auto">
       <div className="border border-neutral-800/90 p-[0.4rem]  rounded-full sticky z-[100]  backdrop-blur-md">
-        <nav className="flex gap-2 relative justify-center w-full z-[100]  rounded-full">
+        <nav className="flex md:gap-2 gap-1 lg:gap-2 relative items-center justify-center w-full z-[100]  rounded-full">
           {navItems.map((item) => {
             const isActive = item.path === pathname;
 
