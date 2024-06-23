@@ -28,7 +28,7 @@ const Notes = () => {
       <div className='flex flex-col gap-5 w-full '>
         {
           data.map((note) => (
-            <Notecard Heading={note.heading} subHeading={note.subheading} />
+            <Notecard key={note.heading} Heading={note.heading} subHeading={note.subheading} />
           ))
         }
       </div>
