@@ -34,13 +34,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={acorn.className}>
-        <div className="lg:px-20 md:px-10 mx-auto px-5 ">
+        <div className="lg:px-20 md:px-10 mx-auto px-5  ">
           <Navbar />
           <div>
             {children}
           </div>
-          <Footer />
         </div>
+        <Footer />
       </body>
     </html>
   );
