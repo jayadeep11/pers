@@ -11,16 +11,16 @@ const navItems = [
     name: "/",
   },
   {
+    path: "/about",
+    name: "About",
+  },
+  {
     path: "/projects",
     name: "Projects",
   },
   {
     path: "/notes",
     name: "Notes",
-  },
-  {
-    path: "/about",
-    name: "About",
   },
 ];
 

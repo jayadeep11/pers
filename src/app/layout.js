@@ -5,23 +5,15 @@ import localFont from "next/font/local"
 import { Footer } from "@/components/Footer";
 
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+});
 
 const acorn = localFont({
   src: "./fonts/Acorn-Bold.ttf",
-},
-  {
-    src: "./fonts/Acorn-Light.ttf",
-  },
-  {
-    src: "./fonts/Acorn-Medium.ttf",
-  },
-  {
-    src: "./fonts/Acorn-Regular.ttf",
-  },
-  {
-    src: "./fonts/Acorn-SemiBold.ttf",
-  },
+  variable: "--font-acorn",
+}
 );
 
 
@@ -32,8 +24,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={acorn.className}>
+    <html lang="en" className={[inter.variable, acorn.variable].join(" ")}>
+      <body>
         <div className="lg:px-20 md:px-10 mx-auto px-5  ">
           <Navbar />
           <div>

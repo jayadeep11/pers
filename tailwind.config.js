@@ -9,6 +9,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["var(--font-inter)"],
+        acorn: ["var(--font-acorn)"],
+      },
     },
   },
   plugins: [],
