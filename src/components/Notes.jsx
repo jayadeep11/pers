@@ -1,9 +1,9 @@
 "use client"
 import { data } from '@/constants'
 import React from 'react'
-import Notecard from './Notecard'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import Notecard from '@/components/Notecard'
 
 
 const getData = async () => {
@@ -31,7 +31,7 @@ const Notes = () => {
       <div className='flex flex-col gap-5 w-full lg:px-40 md:px-40 sm:px-14 '>
         {
           posts.map((post, index) => (
-            <Link key={index} href={`/notes/${post.id}`} >
+            <Link key={index} href={`/notes/${post.heading}`} >
               <Notecard key={index} post={post} />
             </Link>
           ))

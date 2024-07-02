@@ -8,15 +8,15 @@ import Link from "next/link";
 const navItems = [
   {
     path: "/",
-    name: "Notes",
-  },
-  {
-    path: "/work",
-    name: "Work",
+    name: "/",
   },
   {
     path: "/projects",
     name: "Projects",
+  },
+  {
+    path: "/notes",
+    name: "Notes",
   },
   {
     path: "/about",

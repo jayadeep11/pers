@@ -1,7 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
 import logo from "../../public/prop.jpg";
-import Note from './Note';
 
 const Notecard = ({ post }) => {
   return (

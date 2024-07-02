@@ -1,8 +1,8 @@
 export const data = [
   { "id": "0", "heading": "gh_command", "subheading": "This script helps you quickly open various GitHub pages in your browser. " },
-  { "id": "1", "heading": "gh_command", "subheading": "This script helps you quickly open various GitHub pages in your browser. " },
-  { "id": "2", "heading": "gh_command", "subheading": "This script helps you quickly open various GitHub pages in your browser. " },
-  { "id": "3", "heading": "gh_command", "subheading": "This script helps you quickly open various GitHub pages in your browser. " },
+  { "id": "1", "heading": "Some-thing", "subheading": "This script helps you quickly open various GitHub pages in your browser. " },
+  { "id": "2", "heading": "Nothing_over_here", "subheading": "This script helps you quickly open various GitHub pages in your browser. " },
+  { "id": "3", "heading": "idk", "subheading": "This script helps you quickly open various GitHub pages in your browser. " },
 ]
 
 export const quick_links = [

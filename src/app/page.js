@@ -1,8 +1,8 @@
-import Notes from '@/components/Notes';
 import './globals.css'
+import Hero from '@/components/Hero';
 
 export default function Home() {
   return (
-    <Notes />
+    <Hero />
   );
 }
