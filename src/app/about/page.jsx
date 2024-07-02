@@ -15,11 +15,11 @@ const About = () => {
 
       <div className="flex flex-col lg:flex-row md:flex-row items-center lg:justify-around   md:mx-0  mb-10 sm:flex-row ">
         <div className=" lg:basis-[27rem] p-2 max-[600px]:p-6 max-[600px]:mb-5">
-          <Image src={logo} className="w-full " style={{ clipPath: "circle(50%)" }} />
+          <Image src={logo} className="w-full " alt="image" style={{ clipPath: "circle(50%)" }} />
         </div>
         <div className=" flex lg:basis-[40rem]  flex-col gap-10 text-3xl sm:text-xl lg:text-5xl text-center  lg:text-start   lg:w-1/2">
           <p className="arch text-neutral-500 font-acorn">
-            I'm an IT student at Gayatri Vidya Parishad College of Engineering.</p>
+            Im an IT student at Gayatri Vidya Parishad College of Engineering.</p>
           <div className="flex flex-col gap-10 text-sm lg:text-xl text-gray-500">
             <p>
               My skills include proficiency in React.js and Tailwind CSS, enabling me to create modern, responsive web applications with ease.            </p>
