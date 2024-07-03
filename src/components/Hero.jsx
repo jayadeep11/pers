@@ -5,6 +5,7 @@ import Image from "next/image";
 import logo from "../../public/logo.png"
 
 import { useState } from "react";
+import Link from "next/link";
 
 const HeroSection = () => {
   const [hidden, setHidden] = useState(true);
@@ -23,7 +24,7 @@ const HeroSection = () => {
           onMouseEnter={() => setHidden(false)}
           onMouseLeave={() => setHidden(true)}
           className="web mt-5 text-lg text-center font-acorn text-neutral-500 max-w-4xl hover:text-white hover:before:nothing  transition-all duration-300">
-          {hidden ? <span>Web developer</span> : <span>Nothing Over here</span>}
+          {hidden ? <span>Web developer</span> : <Link href="/special" ><span>Nothing Over here</span></Link>}
         </p>
       </div>
       <div className="flex  justify-center my-10 flex-wrap gap-5">
