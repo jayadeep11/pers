@@ -17,12 +17,12 @@ const navItems = [
     name: "About",
   },
   {
-    path: "/projects",
-    name: "Projects",
-  },
-  {
     path: "/notes",
     name: "Notes",
+  },
+  {
+    path: "/contact",
+    name: "Contact",
   },
 ];
 

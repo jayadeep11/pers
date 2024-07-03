@@ -1,13 +1,12 @@
-import { Inter } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import localFont from "next/font/local"
-import { Footer } from "@/components/Footer";
 
-
-const inter = Inter({
+const poppins = Poppins({
   subsets: ["latin"],
-  variable: "--font-inter",
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
+  variable: "--font-poppins",
 });
 
 const acorn = localFont({
@@ -24,7 +23,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={[inter.variable, acorn.variable].join(" ")}>
+    <html lang="en" className={`${poppins.variable} ${acorn.variable}`}>
       <body>
         <div className="lg:px-20 md:px-10 mx-auto px-5 ">
           <Navbar />
@@ -32,7 +31,6 @@ export default function RootLayout({ children }) {
             {children}
           </div>
         </div>
-        <Footer />
       </body>
     </html>
   );

@@ -12,6 +12,7 @@ module.exports = {
       fontFamily: {
         sans: ["var(--font-inter)"],
         acorn: ["var(--font-acorn)"],
+        poppins: ["var(--font-poppins)"],
       },
     },
   },
