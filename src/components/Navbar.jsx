@@ -4,11 +4,13 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
+import logo from "../../public/logo.png"
 
 const navItems = [
   {
     path: "/",
-    name: "/",
+    name: <Image src={logo} className="w-6 h-6" alt="image" />
   },
   {
     path: "/about",

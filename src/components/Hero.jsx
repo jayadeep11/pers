@@ -1,22 +1,36 @@
-import React from 'react'
-import '../app/globals.css'
-import Link from 'next/link'
-import { FaGithub, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa6'
+"use client"
+import { FaGithub, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 
-const Hero = () => {
+import logo from "../../public/logo.png"
+
+import { useState } from "react";
+
+const HeroSection = () => {
+  const [hidden, setHidden] = useState(true);
   return (
-    <div id='Hero' className="mt-32 flex flex-col items-center justify-evenly">
-      <h1 className={`text-center font-acorn md:text-9xl text-6xl max-[425px]:mt-24 max-[425px]:text-6xl max-[768px]:text-8xl lg:text-9xl`}>im Jayadeep</h1>
-      <p className='text-center mt-5 text-neutral-500 hover:text-white font-acorn transition-all'>Web developer</p>
-      <div className="flex  justify-center my-10 flex-wrap gap-5 mt-40">
-        <Link href="https://github.com/jayadeep11/" target="_blank" className="text-white transition-all hover:text-orange-500"><FaGithub className="w-8  h-8" /></Link>
-        <Link href="https://www.linkedin.com/in/jayadeep11/" target="_blank" className="text-white transition-all hover:text-orange-500"><FaLinkedin className="w-8  h-8" /></Link>
-        <Link href="https://www.instagram.com/jayadeep__11/" target="_blank" className="text-white transition-all hover:text-orange-500"><FaInstagram className="w-8  h-8" /></Link>
-        <Link href="https://www.instagram.com/jayadeep__11/" target="_blank" className="text-white transition-all hover:text-orange-500"><FaTwitter className="w-8  h-8" /></Link>
+    <div className="he flex font-acorn flex-col items-center max-[1024px]:mt-60 lg:min-h-[1000px] justify-center">
+      <img src={logo} className="w-12 h-12 max-[770px]:flex hidden absolute top-10" alt="logo" />
+      <h1 className="im text-6xl sm:text-6xl lg:text-[10rem] font-bold  text-center tracking-wide">
+        I'm
+        <span className=" name font-bold bg-gradient-to-r from-orange-500 to-red-800 text-transparent bg-clip-text">
+          {" "}
+          Jayadeep
+        </span>
+      </h1>
+      <p
+        onMouseEnter={() => setHidden(false)}
+        onMouseLeave={() => setHidden(true)}
+        className="web mt-5 text-lg text-center font-acorn text-neutral-500 max-w-4xl hover:text-white hover:before:nothing  transition-all duration-300">
+        {hidden ? <span>Web developer</span> : <span>Nothing Over here</span>}
+      </p>
+      <div className="flex  justify-center my-10 flex-wrap gap-5  mt-40 lg:mt-64">
+        <a href="https://github.com/jayadeep11/" target="_blank" className="text-white transition-all hover:text-orange-500"><FaGithub className="w-8  h-8" /></a>
+        <a href="https://www.linkedin.com/in/jayadeep11/" target="_blank" className="text-white transition-all hover:text-orange-500"><FaLinkedin className="w-8  h-8" /></a>
+        <a href="https://www.instagram.com/jayadeep__11/" target="_blank" className="text-white transition-all hover:text-orange-500"><FaInstagram className="w-8  h-8" /></a>
+        <a href="https://www.instagram.com/jayadeep__11/" target="_blank" className="text-white transition-all hover:text-orange-500"><FaTwitter className="w-8  h-8" /></a>
       </div>
-    </div >
-  )
-}
+    </div>
+  );
+};
 
-export default Hero
-
+export default HeroSection;
