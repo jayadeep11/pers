@@ -2,6 +2,8 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import localFont from "next/font/local"
+import Image from "next/image";
+import A from "../../public/A.png"
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -25,7 +27,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${poppins.variable} ${acorn.variable}`}>
       <body>
-        <div className="lg:px-20 md:px-10 mx-auto px-5 ">
+        <div className="relative lg:px-20 md:px-10 mx-auto px-5 ">
           <Navbar />
           <div>
             {children}

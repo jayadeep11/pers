@@ -6,6 +6,8 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import logo from "../../public/logo.png"
+import A from "../../public/A.png"
+
 
 const navItems = [
   {
@@ -34,9 +36,19 @@ export default function NavBar() {
   }
 
   const [hoveredPath, setHoveredPath] = useState(pathname);
+  const [isSpecial, setIsSpecial] = useState(false);
 
   return (
-    <div className="flex justify-center items-center mt-5 mx-auto">
+    <div className="flex justify-between items-center  mt-5 mx-auto ">
+      <Link href={`${isSpecial == false ? "/special" : "/"}`} >
+        <Image
+          src={A}
+          alt="A logo"
+          className={`sticky w-14 h-14 top-14 ${isSpecial ? "-rotate-180" : ""}   right-52 transition-all duration-300 ease-in-out `}
+          onClick={() => setIsSpecial(!isSpecial)}
+
+        />
+      </Link>
       <div className="border border-neutral-800/90 p-[0.4rem]  rounded-full sticky z-[100]  backdrop-blur-md">
         <nav className="flex md:gap-2 gap-1 lg:gap-2 relative items-center justify-center w-full z-[100]  rounded-full">
           {navItems.map((item) => {
@@ -75,6 +87,7 @@ export default function NavBar() {
           })}
         </nav>
       </div>
+      <Image src={A} alt="A logo" className={`sticky w-14 h-14 top-14 opacity-0 right-52 `} />
     </div>
   );
 }
